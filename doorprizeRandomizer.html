@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Doorprize Randomizer — Dark Tech Minimal</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="app">
+      <header>
+        <div>
+          <div class="brand">DOORPRIZE RANDOMIZER</div>
+          <div class="subtitle">
+            Tech conference dark minimal — upload CSV, start/stop roulette,
+            confetti & sound
+          </div>
+        </div>
+        <div class="subtitle">Files: CSV (one column of names)</div>
+      </header>
+
+      <main class="card">
+        <div class="uploader">
+          <label class="file-label" for="fileInput">Upload CSV</label>
+          <input id="fileInput" type="file" accept=".csv" />
+          <div style="flex: 1"></div>
+          <div class="pill" id="countPill">Participants: 0</div>
+        </div>
+
+        <section class="stage" style="margin-top: 14px">
+          <div class="display-box">
+            <div class="name-current" id="currentName">Ready</div>
+            <div class="name-small" id="subText">
+              Upload CSV lalu tekan START
+            </div>
+          </div>
+
+          <div class="controls">
+            <button id="startBtn" class="btn btn-start">START</button>
+            <button id="stopBtn" class="btn btn-stop" disabled>STOP</button>
+            <button id="resetBtn" class="btn btn-reset">RESET</button>
+            <button id="removeWinnerBtn" class="btn btn-ghost" disabled>
+              REMOVE WINNER
+            </button>
+          </div>
+
+          <div class="info-row">
+            <div class="pill" id="statusPill">Status: idle</div>
+            <div class="pill" id="lastWinnerPill">Last winner: —</div>
+          </div>
+        </section>
+      </main>
+
+      <aside class="side">
+        <div class="panel card">
+          <div
+            style="
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              margin-bottom: 8px;
+            "
+          >
+            <strong>Participants</strong>
+            <small id="remainingCount">0</small>
+          </div>
+          <div class="list" id="participantList">No participants loaded</div>
+        </div>
+
+        <div class="panel card">
+          <div
+            style="
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              margin-bottom: 8px;
+            "
+          >
+            <strong>History</strong>
+            <small id="historyCount">0</small>
+          </div>
+          <div class="list" id="historyList">No winners yet</div>
+        </div>
+      </aside>
+
+      <footer>
+        Open this file in a modern browser. Works fully offline. Recommended:
+        full-screen projector.
+      </footer>
+    </div>
+
+    <canvas class="confetti-canvas" id="confettiCanvas"></canvas>
+
+    <script src="script.js"></script>
+  </body>
+</html>
